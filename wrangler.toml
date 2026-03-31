@@ -1,0 +1,18 @@
+name = "cf-ai-voice-assistant"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "CONVERSATION"
+class_name = "ConversationMemory"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["ConversationMemory"]
+
+[assets]
+directory = "./public"
