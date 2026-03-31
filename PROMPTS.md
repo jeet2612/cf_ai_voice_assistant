@@ -44,3 +44,12 @@ This file documents the AI prompts used during the development of this project, 
 > I got EACCES permission denied when running npm install -g wrangler on Mac. How do I fix it?
 
 **Used for:** Local environment setup.
+
+---
+
+## 6. UI Redesign
+
+**Prompt:**
+> I want a proper website with a proper UI, not this. Build a production-grade voice assistant frontend called "Vox" with: animated glowing background orbs, Syne + DM Sans fonts, gradient branding, animated waveform bars when recording, bouncing thinking dots, suggestion chips on the empty state, proper chat bubbles with avatars, and a dark theme with purple/pink accents.
+
+**Used for:** `public/index.html` (full redesign)

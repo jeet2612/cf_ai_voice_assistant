@@ -1,34 +1,40 @@
 # cf_ai_voice_assistant
 
-A voice-enabled AI assistant built on Cloudflare's developer platform. Speak or type your questions and get spoken responses powered by Llama 3.3, with full conversation memory.
+**Vox** — a voice-enabled AI assistant built on Cloudflare's developer platform. Speak or type your questions and get spoken responses powered by Llama 3.3, with full conversation memory per session.
+
+🔗 **Live Demo**: https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev
 
 ## Features
 
-- 🎤 **Voice input** via Web Speech API
-- 🔊 **Text-to-speech** responses read aloud automatically
-- 🧠 **Conversation memory** — remembers context across turns (Durable Objects)
+- 🎤 **Voice input** via Web Speech API with animated waveform
+- 🔊 **Text-to-speech** responses read aloud automatically (toggleable)
+- 🧠 **Conversation memory** — remembers full context across turns via Durable Objects
 - ⚡ **LLM** — Llama 3.3 70B via Cloudflare Workers AI
 - 💬 **Text fallback** — type instead of speaking anytime
+- ✨ **Suggestion chips** — quick-start prompts on the empty state
 - 🗑️ Clear chat history with one click
 
 ## Architecture
-cat > README.md << 'EOF'
+cat > ~/Desktop/cf_ai_voice_assistant/README.md << 'EOF'
 # cf_ai_voice_assistant
 
-A voice-enabled AI assistant built on Cloudflare's developer platform. Speak or type your questions and get spoken responses powered by Llama 3.3, with full conversation memory.
+**Vox** — a voice-enabled AI assistant built on Cloudflare's developer platform. Speak or type your questions and get spoken responses powered by Llama 3.3, with full conversation memory per session.
+
+🔗 **Live Demo**: https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev
 
 ## Features
 
-- 🎤 **Voice input** via Web Speech API
-- 🔊 **Text-to-speech** responses read aloud automatically
-- 🧠 **Conversation memory** — remembers context across turns (Durable Objects)
+- 🎤 **Voice input** via Web Speech API with animated waveform
+- 🔊 **Text-to-speech** responses read aloud automatically (toggleable)
+- 🧠 **Conversation memory** — remembers full context across turns via Durable Objects
 - ⚡ **LLM** — Llama 3.3 70B via Cloudflare Workers AI
 - 💬 **Text fallback** — type instead of speaking anytime
+- ✨ **Suggestion chips** — quick-start prompts on the empty state
 - 🗑️ Clear chat history with one click
 
 ## Architecture
 ```
-Browser (Voice UI)
+Browser (Vox UI — voice + text)
     │
     ▼
 Cloudflare Worker (src/index.js)
@@ -37,7 +43,7 @@ Cloudflare Worker (src/index.js)
     │     └── Stores last 20 messages per session
     │
     └── Workers AI: Llama 3.3 70B
-          └── Generates conversational responses
+          └── Generates concise, conversational responses
 ```
 
 ## Tech Stack
@@ -55,34 +61,36 @@ Cloudflare Worker (src/index.js)
 
 - Node.js 18+
 - Cloudflare account (free tier works)
-- Wrangler CLI: `npm install -g wrangler`
+- Wrangler CLI: `sudo npm install -g wrangler`
+- Chrome browser (required for Web Speech API)
 
 ## Running Locally
 ```bash
 git clone https://github.com/YOUR_USERNAME/cf_ai_voice_assistant
 cd cf_ai_voice_assistant
-npm install
 wrangler login
 wrangler dev
 ```
 
-Then open **http://localhost:8787** in Chrome (Chrome required for Web Speech API).
+Open **http://localhost:8787** in Chrome.
 
 ## Deploying to Cloudflare
 ```bash
 wrangler deploy
 ```
 
-Wrangler will print a live URL like `https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev`.
+Wrangler will print a live URL like:
+`https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev`
 
 ## Usage
 
-1. Open the app in Chrome
-2. Click the **🎤 mic button** and speak your question
-3. The assistant responds in text and reads the answer aloud
-4. Toggle **🔊 TTS** on/off to mute spoken responses
+1. Open the app in **Chrome**
+2. Click the **🎤 mic button** and speak your question — a waveform animates while listening
+3. The assistant responds in the chat and reads the answer aloud
+4. Toggle **Voice On/Off** to mute spoken responses
 5. Use the text box to type instead of speaking
-6. Click **Clear Chat** to reset the conversation
+6. Click **Clear** to reset the conversation
+7. Use the **suggestion chips** on the home screen for quick prompts
 
 ## Project Structure
 ```
@@ -91,7 +99,7 @@ cf_ai_voice_assistant/
 ├── src/
 │   └── index.js        # Worker entry + ConversationMemory Durable Object
 ├── public/
-│   └── index.html      # Voice UI (mic, TTS, chat bubbles)
+│   └── index.html      # Vox UI (voice input, waveform, TTS, chat bubbles)
 ├── README.md
 └── PROMPTS.md
 ```
