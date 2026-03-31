@@ -12,7 +12,7 @@ class_name = "ConversationMemory"
 
 [[migrations]]
 tag = "v1"
-new_classes = ["ConversationMemory"]
+new_sqlite_classes = ["ConversationMemory"]
 
 [assets]
 directory = "./public"
