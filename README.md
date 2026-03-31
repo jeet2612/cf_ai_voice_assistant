@@ -2,7 +2,7 @@
 
 **Vox** — a voice-enabled AI assistant built on Cloudflare's developer platform. Speak or type your questions and get spoken responses powered by Llama 3.3, with full conversation memory per session.
 
-🔗 **Live Demo**: https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev
+🔗 **Live Demo**: https://cf-ai-voice-assistant.jeetmehta2026.workers.dev
 
 ## Features
 
@@ -20,7 +20,7 @@ cat > ~/Desktop/cf_ai_voice_assistant/README.md << 'EOF'
 
 **Vox** — a voice-enabled AI assistant built on Cloudflare's developer platform. Speak or type your questions and get spoken responses powered by Llama 3.3, with full conversation memory per session.
 
-🔗 **Live Demo**: https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev
+🔗 **Live Demo**: https://cf-ai-voice-assistant.jeetmehta2026.workers.dev
 
 ## Features
 
@@ -80,7 +80,7 @@ wrangler deploy
 ```
 
 Wrangler will print a live URL like:
-`https://cf-ai-voice-assistant.YOUR_SUBDOMAIN.workers.dev`
+`https://cf-ai-voice-assistant.jeetmehta2026.workers.dev`
 
 ## Usage
 
